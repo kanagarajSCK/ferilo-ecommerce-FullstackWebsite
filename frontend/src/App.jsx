@@ -930,6 +930,24 @@ function DashboardPage() {
           </span>
         </p>
         <div className="dashboard__cards">
+
+          {user.role === 'ADMIN' && (
+            <>
+              <Link to="/admin" className="trust__card dashboard__link">
+                <h2>Admin Dashboard</h2>
+                <p>Overview of users, listings, orders and reports.</p>
+              </Link>
+              <Link to="/admin/verifications" className="trust__card dashboard__link">
+                <h2>Admin: Verifications</h2>
+                <p>Review pending identity requests.</p>
+              </Link>
+              <Link to="/admin/reports" className="trust__card dashboard__link">
+                <h2>Admin: Reports</h2>
+                <p>Moderate community reports.</p>
+              </Link>
+            </>
+          )}
+          
           <Link to="/app/listings" className="trust__card dashboard__link">
             <h2>My Listings</h2>
             <p>Create and manage your products.</p>
@@ -970,22 +988,6 @@ function DashboardPage() {
             <h2>Verify Identity</h2>
             <p>Required to publish listings.</p>
           </Link>
-          {user.role === 'ADMIN' && (
-            <>
-              <Link to="/admin" className="trust__card dashboard__link">
-                <h2>Admin Dashboard</h2>
-                <p>Overview of users, listings, orders and reports.</p>
-              </Link>
-              <Link to="/admin/verifications" className="trust__card dashboard__link">
-                <h2>Admin: Verifications</h2>
-                <p>Review pending identity requests.</p>
-              </Link>
-              <Link to="/admin/reports" className="trust__card dashboard__link">
-                <h2>Admin: Reports</h2>
-                <p>Moderate community reports.</p>
-              </Link>
-            </>
-          )}
         </div>
       </div>
     </div>
